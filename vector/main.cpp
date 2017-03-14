@@ -8,57 +8,59 @@
 using std::cout;
 
 template <typename T>
-class Vector{
+class MyVector{
 private:
     unsigned len;
     unsigned max_len;
     T* elems;
 public:
     unsigned get_len();
-    Vector();
-    ~Vector();
+    MyVector();
+    ~MyVector();
     void add(T);
     void remove(unsigned);
     T operator[](int num);
     void dump();
 };
 
+
 template <typename T>
-unsigned Vector<T>::get_len(){
+unsigned MyVector<T>::get_len(){
     return len;
 }
 
 template <typename T>
-void Vector<T>::dump(){
-    cout<<"<Class Vector: len="<<len<<"| elems=[ ";
-    for(int i = 0; i < len; i++){
+void MyVector<T>::dump(){
+    cout<<"<Class MyVector: len="<<len<<"| elems=[ ";
+    for(int i = 0; i < len - 1; i++){
         cout<<elems[i]<<", ";
     }
-    cout<<']'<<std::endl;
+    cout<<elems[len - 1];
+    cout<<" ]"<<std::endl;
 }
 
 template <typename T>
-T Vector<T>::operator[](int num){
+T MyVector<T>::operator[](int num){
     assert (num < len);
     return elems[num];
 }
 
 template <typename T>
-Vector<T>::Vector(){
+MyVector<T>::MyVector(){
     max_len = 4;
     elems = new T[max_len];
     len = 0;
 }
 
 template <typename T>
-Vector<T>::~Vector(){
+MyVector<T>::~MyVector(){
     max_len = 0;
     delete elems;
     len = 0;
 }
 
 template <typename T>
-void Vector<T>::add(T elem){
+void MyVector<T>::add(T elem){
     if(max_len - len == 1){
         max_len *= 2;
         T* new_elems = new T[max_len];
@@ -73,7 +75,7 @@ void Vector<T>::add(T elem){
 }
 
 template <typename T>
-void Vector<T>::remove(unsigned num){
+void MyVector<T>::remove(unsigned num){
     assert(num < len);
     for(int i = num; i < len-1; i++){
         elems[i] = elems[i+1];
@@ -84,7 +86,7 @@ void Vector<T>::remove(unsigned num){
 
 int main(){
 
-    Vector<int>* a = new Vector<int>();
+    MyVector<int>* a = new MyVector<int>();
     for (int i = 0; i < 20; ++i){
         a->add(i);
     }
