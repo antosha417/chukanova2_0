@@ -11,7 +11,8 @@ template <typename T>
 class Node{
 private:
     T elem;// тип данных в вершине
-    std::vector<Node*> children; //в векторе чилдрен храним указатели на детей
+    std::vector<Node*> children
+    ; //в векторе чилдрен храним указатели на детей
 public:
     Node(T);
     ~Node();

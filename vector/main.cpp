@@ -19,7 +19,6 @@ public:
     ~MyVector();
     void add(T);
     void remove(unsigned);
-    T operator[](int num);
     void dump();
 };
 
@@ -37,12 +36,6 @@ void MyVector<T>::dump(){
     }
     cout<<elems[len - 1];
     cout<<" ]"<<std::endl;
-}
-
-template <typename T>
-T MyVector<T>::operator[](int num){
-    assert (num < len);
-    return elems[num];
 }
 
 template <typename T>

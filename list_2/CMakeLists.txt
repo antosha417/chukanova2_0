@@ -3,5 +3,5 @@ project(list_2)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.c)
+set(SOURCE_FILES main.cpp)
 add_executable(list_2 ${SOURCE_FILES})
