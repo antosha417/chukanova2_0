@@ -3,5 +3,5 @@ project(Antosha)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 
-set(SOURCE_FILES main.cpp Tree.h)
+set(SOURCE_FILES main.cpp ../max_tree/Tree.h)
 add_executable(Antosha ${SOURCE_FILES})

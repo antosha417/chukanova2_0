@@ -5,7 +5,7 @@
 #include <atomic>
 #include <mutex>
 #include <algorithm>
-#include "Tree.h"
+#include "../max_tree/Tree.h"
 
 template <typename T>
 class FindMax {
