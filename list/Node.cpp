@@ -1,5 +1,5 @@
 //
-// Created by antosha on 15.03.17.
+// Created by Nikitos
 //
 
 #include "Node.h"
@@ -19,7 +19,6 @@ Node::Node(int value_){
 }
 
 Node::~Node(){
-    value = 0;
     next = nullptr;
 }
 

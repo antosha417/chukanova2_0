@@ -1,5 +1,5 @@
 //
-// Created by antosha on 15.03.17.
+// Created by Nikitos
 //
 
 #include <assert.h>
@@ -29,18 +29,20 @@ void list::add_to_num(unsigned num, int value){
     for(unsigned i = 0; i < num; i++){
         current = current->get_next();
     }
-    current->set_next(new Node(value, current->get_next()));
+    Node* new_node = new Node(value, current->get_next());
+    current->set_next(new_node);
     ++len;
 }
 
 void list::delete_from_num(int num){
     assert(len > 0);
     num %= len;
-    Node *current = head->get_next();
 
+    Node *current = head->get_next();
     for (unsigned i = 0; i < num; i++) {
         current = current->get_next();
     }
+
     Node *temp = current->get_next();
     if(temp == head) {
         temp = head->get_next();
@@ -67,4 +69,28 @@ void list::dump(){
     std::cout<<" ]>";
 
     std::cout<<std::endl;
+}
+
+void list::counter(int c){
+    Node* current = head;
+    while (get_len() != 1) {
+        for (int i = 0; i < c - 1; i++){
+            current = current->get_next();
+            if (current == head)
+                i--;
+        }
+
+        Node* temp = current->get_next();
+        if (temp == head){
+            current = head;
+            temp = head->get_next();
+        }
+        current->set_next(temp->get_next());
+        delete temp;
+
+        len --;
+
+        dump();
+
+    }
 }

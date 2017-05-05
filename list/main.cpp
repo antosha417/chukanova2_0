@@ -1,5 +1,5 @@
 //
-// Created by antosha on 15.03.17.
+// Created by Nikitos
 //
 
 
@@ -29,6 +29,17 @@ int main(){
     a->delete_from_num(0);
 
     a->dump();
+
+    std::cout<<"Let's play!"<<std::endl;
+
+    a->add_to_num(a->get_len()-1, 17);
+    a->add_to_num(a->get_len()-1, 18);
+    a->add_to_num(a->get_len()-1, -50);
+    a->add_to_num(a->get_len()-1, -60);
+
+    a->dump();
+
+    a->counter(3);
 
     return 0;
 }

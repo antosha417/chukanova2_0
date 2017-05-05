@@ -1,5 +1,5 @@
 //
-// Created by antosha on 15.03.17.
+// Created by Nikitos
 //
 
 #ifndef CHUKANOVA2_0_NODE_H

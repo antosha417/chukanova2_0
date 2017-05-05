@@ -1,5 +1,5 @@
 //
-// Created by antosha on 15.03.17.
+// Created by Nikitos
 //
 
 #ifndef CHUKANOVA2_0_LIST_H
@@ -23,6 +23,7 @@ public:
     void delete_from_num(int);
 
     void dump();
+    void counter(int);
 };
 
 
