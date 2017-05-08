@@ -12,6 +12,7 @@ add_subdirectory("vector")
 add_subdirectory("list")
 add_subdirectory("list_2")
 add_subdirectory("list_2_cpp")
+add_subdirectory("dir_copy")
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES main.cpp list/main.cpp)
