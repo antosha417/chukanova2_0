@@ -16,12 +16,12 @@ using std::endl;
 
 class Airport {
 private:
-    unsigned airstrips_num;
-    vector<mutex> airstrips;
+    unsigned airstrips_num;  // количество взлётнопосадчных полос
+    vector<mutex> airstrips; // мютексы на полосы
 public:
-    Airport(unsigned = 2);
-    int get_free_airstrip();
-    void free_airstrip(unsigned airstrip_num);
+    Airport(unsigned = 2); // конструктор принамает количество полос
+    int get_free_airstrip(); // возвращает номер свободной полосы и помечает её как занятую, или -1
+    void free_airstrip(unsigned airstrip_num); // освобождает полосу
 };
 
 
