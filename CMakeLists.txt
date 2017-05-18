@@ -14,6 +14,7 @@ add_subdirectory("list_2")
 add_subdirectory("list_2_cpp")
 add_subdirectory("dir_copy")
 add_subdirectory("determinant")
+add_subdirectory("aeroport")
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES main.cpp)
