@@ -22,11 +22,12 @@ int main(){
 
     for (int i = 0; i < 1000; ++i) {
         sleep(1);
-        Aircraft* plane = new Aircraft(airport); // Создяём самолёт
         if(!(rand()%aircraft_landing_num)) { // Если случайноечисло от 0 до aircraft_landing_num 0, то
+            Aircraft* plane = new Aircraft(airport); // Создaём самолёт
             planes.push_back(pair<Aircraft*, thread>(plane, thread([plane](){plane->land();}))); // создаём поток и вызываем у самолёта функцию land()
         }
         if(!(rand()%aircraft_takeoff_num)) { // Если случайноечисло от 0 до aircraft_takeoff_num 0, то
+            Aircraft* plane = new Aircraft(airport); // Создaём самолёт
             planes.push_back(pair<Aircraft*, thread>(plane, thread([plane](){plane->takeoff();}))); // создаём поток и вызываем у самолёта функцию takeoff()
         }
     }
