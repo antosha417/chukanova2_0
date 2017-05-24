@@ -4,31 +4,31 @@
 
 //=============================================================================
 
-class ListElem
+class ListElem		// класс описывает эдемент списка
 {
 public:
-    int value;
-    ListElem* next;
-    ListElem* prev;
+    int value;		// значение
+    ListElem* next;	// следующий элемент
+    ListElem* prev;	// предыдущий элемент
 
-    ListElem();
+    ListElem();		// конструктор скласса
 };
 
-class List
+class List					// класс описывает двусвязный список замкнутый в кольцо
 {
 public:
 
-    int NumberOfElem;
-    ListElem* HeadOfList;
+    int NumberOfElem;		// количество элементов в списке
+    ListElem* HeadOfList;	// указатель на голову списка
 
-    List();
-    ~List();
-    void ListDump();
-    void AddToEnd(int value);
-    void AddToBegin(int value);
-    void DeleteFromEnd();
-    void DeleteFromBegin();
-    void Counter(int);
+    List();					// конструктор класса
+    ~List();				// деструктор класса
+    void ListDump();			// функция печатает список на экран
+    void AddToEnd(int value);	// функция добавляет элемент в конец списка
+    void AddToBegin(int value);	// функция добавляет элемент в начало списка
+    void DeleteFromEnd();		// функция удаляет элемент с конца списка
+    void DeleteFromBegin();		// функция удаляет элемент с начала списка
+    void Counter(int count);	// функция считалочка удаляет каждый count-ый элемент списка пока не останется один
 };
 
 //=============================================================================

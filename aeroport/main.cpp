@@ -17,16 +17,18 @@ int main(){
     Airport airport; // Создаём аэропорт.
     vector<pair<Aircraft*, thread>> planes; // Вектор в коротом будем зранить пары <самолёт, поток в котором он взлетает или садится>
 
-    unsigned aircraft_landing_num = 500; // с вероятностью 1/aircraft_landing_num каждую секунду появляется самолёт на посадку
-    unsigned aircraft_takeoff_num = 600; // с вероятностью 1/aircraft_takeoff_num каждую секунду появляется самолёт на посадку
+    unsigned aircraft_landing_num = 3; // с вероятностью 1/aircraft_landing_num каждую секунду появляется самолёт на посадку
+    unsigned aircraft_takeoff_num = 2; // с вероятностью 1/aircraft_takeoff_num каждую секунду появляется самолёт на посадку
 
-    for (int i = 0; i < 1000; ++i) {
+    for (int i = 0; i < 60; ++i) {
         sleep(1);
-        Aircraft* plane = new Aircraft(airport); // Создяём самолёт
+         // Создём самолёт
         if(!(rand()%aircraft_landing_num)) { // Если случайноечисло от 0 до aircraft_landing_num 0, то
+            Aircraft* plane = new Aircraft(airport);
             planes.push_back(pair<Aircraft*, thread>(plane, thread([plane](){plane->land();}))); // создаём поток и вызываем у самолёта функцию land()
         }
         if(!(rand()%aircraft_takeoff_num)) { // Если случайноечисло от 0 до aircraft_takeoff_num 0, то
+            Aircraft* plane = new Aircraft(airport);
             planes.push_back(pair<Aircraft*, thread>(plane, thread([plane](){plane->takeoff();}))); // создаём поток и вызываем у самолёта функцию takeoff()
         }
     }
@@ -36,6 +38,7 @@ int main(){
         delete planes.back().first; // чистим память
         planes.pop_back(); // удвляем самолёт из вектора
     }
+
 
     return 0;
 }

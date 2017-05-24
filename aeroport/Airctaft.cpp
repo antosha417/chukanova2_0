@@ -22,10 +22,10 @@ int Aircraft::wait_for_airstrip() {
 void Aircraft::land() {
     int airstrip_num = wait_for_airstrip();
     if(airstrip_num < 0) {
-        cout<<"Aircraft flew away from airport :c"<<std::endl;
+        cout<<"Aircraft "<<name<<" flew away from airport :c"<<std::endl;
         return;
     }
-    cout<<"Aircraft is lending to "<<airstrip_num<<"'th airstrip."<<std::endl;
+    cout<<"Aircraft "<<name<<" is lending to "<<airstrip_num<<"'th airstrip."<<std::endl;
     sleep(landing_time);
     airport.free_airstrip((unsigned)airstrip_num);
 }
@@ -33,10 +33,10 @@ void Aircraft::land() {
 void Aircraft::takeoff() {
     int airstrip_num = wait_for_airstrip();
     if(airstrip_num < 0) {
-        cout<<"Aircraft crushed into the wall :c"<<std::endl;
+        cout<<"Aircraft "<<name<<" crushed into the wall :c"<<std::endl;
         return;
     }
-    cout<<"Aircraft is taking off from "<<airstrip_num<<"'th airstrip."<<std::endl;
+    cout<<"Aircraft "<<name<<" is taking off from "<<airstrip_num<<"'th airstrip."<<std::endl;
     sleep(takeoff_time);
     airport.free_airstrip((unsigned)airstrip_num);
 }

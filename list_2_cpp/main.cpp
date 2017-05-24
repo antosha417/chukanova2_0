@@ -6,22 +6,26 @@ int main() {
 
     List* list =  new List();
 
-    list->AddToEnd(1);
-    list->AddToEnd(2);
-    list->AddToEnd(3);
-    list->AddToEnd(4);
-    list->AddToEnd(5);
-    list->AddToEnd(6);
-    list->AddToEnd(7);
-    list->AddToEnd(8);
-    list->AddToEnd(9);
-    list->AddToEnd(10);
-    list->AddToEnd(11);
+    for (int i = 0; i < 7; ++i) {
+        list->AddToEnd(i);
+    }
 
+    list->ListDump();
+
+    for (int i = 7; i < 9; ++i) {
+        list->AddToBegin(i);
+    }
+
+    list->ListDump();
+
+    list->DeleteFromBegin();
+    list->DeleteFromEnd();
 
     list->ListDump();
 
     list->Counter(3);
+
+    delete list;
 
     return 0;
 }
