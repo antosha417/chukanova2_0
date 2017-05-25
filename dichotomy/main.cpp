@@ -36,7 +36,15 @@ private:
 
 ostream& operator<<(ostream& os, const mayan_number& num){
     for (int i = (int)num.number.size() - 1; i > -1; --i) {
-        os<<'('<<num.number[i]<<')';
+
+        os<<'(';
+        for (int j = 0; j < num.number[i]%5; ++j) {
+            os<<'.';
+        }
+        for (int j = 0; j < num.number[i]/5; ++j) {
+            os<<'|';
+        }
+        os<<')';
     }
     return os;
 }
@@ -235,7 +243,7 @@ int main() {
     mayan_number c (210);
     mayan_number d (210);
     mayan_number q = a;
-    cout<<c/d<<endl;
+    cout<<d<<endl;
 
     return 0;
 }
