@@ -16,6 +16,7 @@ add_subdirectory("dir_copy")
 add_subdirectory("determinant")
 add_subdirectory("aeroport")
 add_subdirectory("dichotomy")
+add_subdirectory("integral")
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES main.cpp)
