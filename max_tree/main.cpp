@@ -83,7 +83,7 @@ class FindMax {
     return *std::max_element(maxes.begin(), maxes.end());
   }
 
-  ~FindMax() {}
+  ~FindMax() = default;
 };
 
 int main() {

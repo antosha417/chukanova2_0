@@ -30,10 +30,10 @@ private:
             if (i == number) {
                 continue;
             }
-            if (mtxs[i].try_lock()) {
+            if (mtxs[i].try_lock()) {         // блокируем чужую очередь
                 if (!queues[i].empty()) {
                     Node<T> *node = queues[i].front();
-                    queues[i].pop();
+                    queues[i].pop();          // если не пуста, возвращаем первый элемент
                     mtxs[i].unlock();
                     return node;
                 }
@@ -130,7 +130,7 @@ int main() {
     tree->dump();
 
     // запустим поиск 5-ки в дереве на 3-ёх потоках
-    FindElem<int> elem(3, tree, 70);
+    FindElem<int> elem(3, tree, 5);
 
     // нарисуем поддерево которое нашли
     Node<int> *found = elem.Find();

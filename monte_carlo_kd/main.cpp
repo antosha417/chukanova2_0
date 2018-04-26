@@ -13,7 +13,7 @@ using std::cout;
 
 
 double funk(int k, double* args){
-    return sin(args[0]);
+    return args[0]*args[1];
 }
 
 /*double funk(int k, double* args){
